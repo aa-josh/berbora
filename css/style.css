@@ -17,9 +17,8 @@ html {
 
 body {
   font-family: "Kanit", sans-serif;
-  background-color: var(--primary);
   color: red;
-  /* min-height: 2000px; */
+  min-height: 2000px;
 }
 
 /* navbar */
@@ -28,8 +27,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 10%;
-  background-color: rgba(0, 77, 4, 0.5);
+  background-color: rgba(0, 77, 4, 0.8);
   backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgb(1, 65, 4);
   position: fixed;
   top: 0;
   left: 0;
@@ -44,6 +44,7 @@ body {
 .navbar-nav a {
   display: inline-block;
   color: white;
+  font-weight: 300;
   margin: 0.7rem;
   transition: 0.1s linear;
 }
@@ -75,26 +76,56 @@ body {
 
 /* home start */
 .home {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: auto;
-  text-align: center;
-  width: 100%;
   height: 100vh;
+  padding-top: 4rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section1 {
+  background-color: var(--primary);
   background-image: url(../img/bg.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgb(1, 63, 4);
+  height: 75vh;
+  width: 70%;
+  position: relative;
+}
+
+.section1 .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
 }
 
 .home img {
-  margin-top: 7rem;
-  margin-bottom: 0.2rem;
   border-radius: 50%;
+  box-shadow: 1px 1px var(--primary);
+  margin-top: 7rem;
+  margin-left: 3rem;
+}
+
+.section1 .content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70%;
   align-items: center;
 }
 
 .home h1 {
-  font-size: 4rem;
+  margin-top: 8rem;
+  font-size: 3.5rem;
   text-align: center;
   color: white;
   font-weight: 200;
@@ -102,6 +133,8 @@ body {
 }
 
 .home p {
+  display: block;
+  margin: auto;
   font-size: 1.5rem;
   font-weight: 100;
   color: var(--primary);
@@ -110,23 +143,58 @@ body {
   padding: 0.2rem 5rem;
   border-radius: 20px;
   width: fit-content;
-  display: block;
-  margin: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .home a {
-  color: var(--primary);
-  background-color: white;
-  padding: 0.2rem 1.2rem;
+  font-size: 1.6rem;
+  color: white;
+  background-color: var(--primary);
+  padding: 0.1rem 1.2rem;
   border-radius: 10px;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .home a:hover {
-  color: white;
-  background-color: var(--primary);
+  color: var(--primary);
+  background-color: white;
 }
 /* home end */
+@media (min-width: 901px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 75%;
+  }
+
+  .home img {
+    width: 150px;
+    margin-top: 4rem;
+  }
+
+  .home h1 {
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+  }
+
+  .home p {
+    font-size: 1.2rem;
+    padding: 0.1rem 2rem;
+  }
+
+  .home a {
+    font-size: 1.3rem;
+    bottom: 1.3rem;
+  }
+}
 
 @media (max-width: 600px) {
   html {
@@ -175,8 +243,36 @@ body {
     display: inline-block;
     border-radius: 0;
   }
+
+  .section1 .container {
+    height: 50%;
+    width: 100%;
+  }
+
   .home img {
-    margin-top: 14rem;
-    width: 200px;
+    margin-top: 10rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+  }
+
+  .section1 .content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .section1 .content h1 {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .home p {
+    padding: 0.2rem 2rem;
+    margin-bottom: 10rem;
   }
 }
